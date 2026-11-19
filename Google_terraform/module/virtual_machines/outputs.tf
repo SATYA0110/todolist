@@ -3,10 +3,7 @@ output "instance_id" {
   value       = google_compute_instance.spot_vm.instance_id
 }
 
-output "self_link" {
-  description = "The URI of the created Spot VM resource."
-  value       = google_compute_instance.spot_vm.self_link
-}
+
 
 output "name" {
   description = "The name of the Spot VM instance."

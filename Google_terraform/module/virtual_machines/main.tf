@@ -1,4 +1,4 @@
-resource "google_compute_instance" "spot_vm" {
+resource "google_compute_instance" "vm" {
   project      = var.project_id
   name         = var.virtual_machines
   machine_type = var.machine_type
@@ -18,7 +18,7 @@ resource "google_compute_instance" "spot_vm" {
     preemptible                 = true
     automatic_restart           = false
     provisioning_model          = "SPOT"
-    instance_termination_action = var.instance_termination_action
+    
   }
 
   network_interface {

@@ -10,12 +10,7 @@ output "subnet_ids" {
   }
 }
 
-output "subnet_self_links" {
-  description = "Map of subnet names to their self_links."
-  value = {
-    for k, s in google_compute_subnetwork.subnet : k => s.self_link
-  }
-}
+
 
 output "subnet_ip_cidr_ranges" {
   description = "Map of subnet names to their primary IP CIDR ranges."
