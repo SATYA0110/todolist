@@ -35,7 +35,7 @@ variable "machine_type" {
   type        = string
 }
 
-variable "instance_name" {
+variable "machine_name" {
   description = "Name of the production VM instance"
   type        = string
 }

@@ -27,7 +27,7 @@ module "firewall" {
 module "virtual_machines" {
   source           = "../../module/virtual_machines"
   project_id       = var.project_id
-  virtual_machines = var.instance_name
+  virtual_machines = var.machine_name
   machine_type     = var.machine_type
   zone             = var.zone
   network          = module.vpc.vpc_id

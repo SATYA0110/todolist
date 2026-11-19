@@ -3,10 +3,11 @@ region                = "us-central1"
 zone                  = "us-central1-a"
 
 vpc_name              = "prod-vpc"
-subnetnetwork         = "prod-private-subnet"
+
 subnet_cidr           = "10.10.0.0/24"
 machine_type          = "e2-standard-4"
-allowed_source_ranges = ["35.235.240.0/20"] # Example: GCP IAP range for SSH
+machine_name          = "prod"
+
 firewall_rules = {
   "prod-allow-iap-ssh" = {
     description   = "Allow SSH access strictly via GCP Identity-Aware Proxy"
