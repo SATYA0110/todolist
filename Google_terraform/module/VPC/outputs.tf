@@ -3,6 +3,6 @@ output "vpc_id" {
 }
 
 output "vpc_name" {
-    values = google_compute_network.vpc.name
+    value = google_compute_network.vpc.name
 }
 

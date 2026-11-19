@@ -3,7 +3,7 @@ variable "project_id" {
   type        = string
 }
 
-variable "instance_name" {
+variable "virtual_machines" {
   description = "The name of the Spot VM instance."
   type        = string
 }

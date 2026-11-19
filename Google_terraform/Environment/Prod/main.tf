@@ -13,7 +13,7 @@ module "subnet" {
 }
 
 module "firewall" {
-  source     = "../../modules/firewall"
+  source     = "../../module/firewall"
   project_id = var.project_id
   network    = module.vpc.vpc_name
   rules      = var.firewall_rules

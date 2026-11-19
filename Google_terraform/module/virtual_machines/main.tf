@@ -1,6 +1,6 @@
 resource "google_compute_instance" "spot_vm" {
   project      = var.project_id
-  name         = var.instance_name
+  name         = var.virtual_machines
   machine_type = var.machine_type
   zone         = var.zone
   tags         = var.tags
