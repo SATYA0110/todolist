@@ -1,7 +1,7 @@
 project_id            = "project-46ccb90c-64b1-4c46-8d9"
 region                = "us-central1"
 zone                  = "us-central1-a"
-environment           = "prod"
+
 vpc_name              = "prod-vpc"
 subnetnetwork         = "prod-private-subnet"
 subnet_cidr           = "10.10.0.0/24"
