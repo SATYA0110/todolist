@@ -1,12 +1,12 @@
 variable "project_id" {
-    description = "project_id of gcp"
-    type = string
+  description = "project_id of gcp"
+  type        = string
 }
 
 variable "region" {
-    description = "region of resources"
-    type = string
-    default = "us-central1"
+  description = "region of resources"
+  type        = string
+  default     = "us-central1"
 }
 
 variable "zone" {
@@ -14,8 +14,6 @@ variable "zone" {
   type        = string
   default     = "us-central1-a"
 }
-
-
 
 variable "vpc_name" {
   description = "Name of the production VPC"
@@ -37,3 +35,13 @@ variable "machine_type" {
   type        = string
 }
 
+variable "instance_name" {
+  description = "Name of the production VM instance"
+  type        = string
+}
+
+variable "firewall_rules" {
+  description = "Map of firewall rules for the production VPC"
+  type        = any
+  default     = {}
+}

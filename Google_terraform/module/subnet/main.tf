@@ -10,7 +10,7 @@ resource "google_compute_subnetwork" "subnet" {
 
     private_ip_google_access = each.value.private_ip_google_access
 
-    prupose = each.value.prupose
+    purpose = each.value.purpose
     role = each.value.role
 
     dynamic "secondary_ip_range" {

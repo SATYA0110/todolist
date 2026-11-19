@@ -1,15 +1,20 @@
 module "vpc" {
-    source = "../../module/VPC"
-    project_id = var.project_id
-    vpc_name = var.vpc_name
-
-
+  source     = "../../module/VPC"
+  project_id = var.project_id
+  vpc_name   = var.vpc_name
 }
 
 module "subnet" {
-    source = "../../module/subnet"
-    vpc_id = module.vpc.vpc_id
-    subnet_cidr =  var.subnet_cidrs
+  source     = "../../module/subnet"
+  project_id = var.project_id
+  region     = var.region
+  network_id = module.vpc.vpc_id
+
+  subnets = {
+    (var.subnetwork) = {
+      ip_cidr_range = var.subnet_cidr
+    }
+  }
 }
 
 module "firewall" {
@@ -19,13 +24,12 @@ module "firewall" {
   rules      = var.firewall_rules
 }
 
-
 module "virtual_machines" {
-    source = "../../module/virtual_machines"
-    subnetwork     = module.subnet.subnet_ids[0]
-    firewall_id   = module.firewall.firewall_id
-    machine_type = var.instance_type
-    project_id = var.project_id
-    instance_name = var.instance_name
-    zone = var.zone
+  source           = "../../module/virtual_machines"
+  project_id       = var.project_id
+  virtual_machines = var.instance_name
+  machine_type     = var.machine_type
+  zone             = var.zone
+  network          = module.vpc.vpc_id
+  subnetwork       = module.subnet.subnet_ids[var.subnetwork]
 }
