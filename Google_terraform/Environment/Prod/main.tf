@@ -34,8 +34,8 @@ module "virtual_machines" {
   subnetwork       = module.subnet.subnet_ids[var.subnetwork]
 }
 
-module "cloud_nat" {
-  source           = "../../modules/nat" 
+module "nat" {
+  source           = "../../module/nat" 
   router_name      = "prod-nat-router"
   nat_name         = "prod-nat-gateway"
   region           = var.region
