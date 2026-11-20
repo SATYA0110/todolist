@@ -40,4 +40,5 @@ module "nat" {
   nat_name         = "prod-nat-gateway"
   region           = var.region
   network_id       = module.vpc.vpc_id
+  project_id       = var.project_id
 }
