@@ -35,7 +35,7 @@ module "virtual_machines" {
 }
 
 module "cloud_nat" {
-  source           = "../..modules/nat" 
+  source           = "../../modules/nat" 
   router_name      = "prod-nat-router"
   nat_name         = "prod-nat-gateway"
   region           = var.region
