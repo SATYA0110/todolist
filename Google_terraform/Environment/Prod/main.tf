@@ -33,3 +33,11 @@ module "virtual_machines" {
   network          = module.vpc.vpc_id
   subnetwork       = module.subnet.subnet_ids[var.subnetwork]
 }
+
+module "cloud_nat" {
+  source           = "../..modules/nat" 
+  router_name      = "prod-nat-router"
+  nat_name         = "prod-nat-gateway"
+  region           = var.region
+  network_id       = module.vpc.vpc_id
+}
