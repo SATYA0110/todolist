@@ -70,7 +70,7 @@ variable "assign_public_ip" {
 variable "tags" {
   description = "Network tags applied to the VM for firewall rules."
   type        = list(string)
-  default     = []
+  default     = ["prod-vm"]
 }
 
 variable "labels" {
@@ -102,3 +102,4 @@ variable "service_account_scopes" {
   type        = list(string)
   default     = ["https://googleapis.com"]
 }
+
