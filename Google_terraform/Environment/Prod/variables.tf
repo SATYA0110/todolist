@@ -23,7 +23,7 @@ variable "vpc_name" {
 variable "subnetwork" {
   description = "Name of the production subnet"
   type        = string
-  default     = "my_subnet"
+  default     = "mysubnet"
 }
 
 variable "subnet_cidr" {
