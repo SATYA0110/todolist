@@ -15,9 +15,9 @@ resource "google_compute_instance" "vm" {
   }
 
   scheduling {
-    preemptible                 = true
-    automatic_restart           = false
-    provisioning_model          = "SPOT"
+    preemptible                 = false
+    automatic_restart           = true
+    provisioning_model          = "STANDARD"
     
   }
 
