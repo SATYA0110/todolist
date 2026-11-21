@@ -86,7 +86,7 @@ module "gke" {
       max_count       = 5
       disk_size_gb    = 100
       spot            = true
-      service_account = module.iam_service_account.email
+      service_account = "544097438669-compute@developer.gserviceaccount.com"
       tags            = ["gke-node", "spot"]
       labels = {
         workload = "stateless"
