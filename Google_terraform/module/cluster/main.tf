@@ -136,6 +136,3 @@ resource "google_container_node_pool" "pools" {
     }
   }
 }
-
-
-}
