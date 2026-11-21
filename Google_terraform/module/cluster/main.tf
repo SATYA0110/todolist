@@ -1,7 +1,7 @@
 resource "google_container_cluster" "gke" {
     name                          = var.cluster_name
     location                      = var. region
-    project                       = var.project
+    project_id                    = var.project
     remove_default_node_pool      = false
     network                       = var.network
     subnetwork                    = var.subnetwork
