@@ -52,7 +52,7 @@ module "gke" {
   region       = var.region
 
   network                       = module.vpc.vpc_id
-  subnetwork                    = module.subnet.id
+  subnetwork                    = module.subnet.subnet_ids["var.subnetwork"]
   pods_secondary_range_name     = "gke-pods-range"
   services_secondary_range_name = "gke-services-range"
 
@@ -74,7 +74,7 @@ module "gke" {
       max_count       = 3
       disk_size_gb    = 100
       spot            = false
-      service_account = module.iam_service_account.email
+      service_account = "544097438669-compute@developer.gserviceaccount.com"
       tags            = ["gke-node", "prod"]
       labels = {
         workload = "general"
