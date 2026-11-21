@@ -12,7 +12,12 @@ module "subnet" {
 
   subnets = {
     (var.subnetwork) = {
-      ip_cidr_range = var.subnet_cidr
+      ip_cidr_range            = var.subnet_cidr
+      private_ip_google_access = true
+      secondary_ranges = {
+        "gke-pods"     = "10.20.0.0/16" # Must match var.pods_secondary_range_name in module.gke
+        "gke-services" = "10.30.0.0/20" # Must match var.services_secondary_range_name in module.gke
+      }
     }
   }
 }
