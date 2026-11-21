@@ -6,7 +6,6 @@ resource "google_container_cluster" "gke" {
     network                       = var.network
     subnetwork                    = var.subnetwork
     deletion_protection           = var.deletion_protection
-    resource_labels               = var.resource_labels
     release_channel {
     channel = var.release_channel
     }

@@ -14,16 +14,6 @@ output "endpoint" {
   sensitive   = true
 }
 
-output "ca_certificate" {
-  description = "Base64-encoded public certificate of the cluster root of trust"
-  value       = google_container_cluster.primary.master_auth[0].cluster_ca_certificate
-  sensitive   = true
-}
-
-output "location" {
-  description = "The region where the cluster resides"
-  value       = google_container_cluster.primary.location
-}
 
 output "node_pool_names" {
   description = "List of managed node pool names"
