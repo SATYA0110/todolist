@@ -51,7 +51,7 @@ module "gke" {
   cluster_name = "prod-gke-cluster"
   region       = var.region
 
-  network                       = module.vpc.id
+  network                       = module.vpc.vpc_id
   subnetwork                    = module.subnet.id
   pods_secondary_range_name     = "gke-pods-range"
   services_secondary_range_name = "gke-services-range"

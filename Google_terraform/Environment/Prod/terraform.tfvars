@@ -4,6 +4,8 @@ zone                  = "us-central1-a"
 
 vpc_name              = "prod-vpc"
 
+subnetwork            = "mysubnet"
+
 subnet_cidr           = "10.10.0.0/24"
 machine_type          = "e2-standard-4"
 machine_name          = "prod"
