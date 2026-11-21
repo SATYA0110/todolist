@@ -45,7 +45,7 @@ module "nat" {
 
 
 module "gke" {
-  source = "../../modules/gke"
+  source = "../../module/cluster"
 
   project_id   = var.project_id
   cluster_name = "prod-gke-cluster"
