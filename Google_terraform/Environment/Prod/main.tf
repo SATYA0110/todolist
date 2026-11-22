@@ -58,8 +58,8 @@ module "gke" {
 
   network                       = module.vpc.vpc_id
   subnetwork                    = module.subnet.subnet_ids[var.subnetwork]
-  pods_secondary_range_name     = "gke-pods-range"
-  services_secondary_range_name = "gke-services-range"
+  pods_secondary_range_name     = "gke-pods"
+  services_secondary_range_name = "gke-services"
 
   enable_private_nodes    = true
   enable_private_endpoint = false
@@ -111,3 +111,41 @@ module "gke" {
     managed_by  = "terraform"
   }
 }
+
+
+module "cloud_dns" {
+  source = "./modules/cloud-dns"
+
+  project_id = var.project_id
+  zone_name  = "prod-private-zone"
+  dns_name   = "prod.internal."
+  visibility = "private"
+
+  # Reference the network output from your VPC module
+  vpc_self_links = [
+    module.vpc.network_self_link
+  ]
+
+  # Example records pointing to your VM internal IP and a CNAME
+  records = [
+    {
+      name    = "app"
+      type    = "A"
+      ttl     = 300
+      rrdatas = [module.vm.internal_ip]
+    },
+    {
+      name    = "api"
+      type    = "CNAME"
+      ttl     = 300
+      rrdatas = ["app.prod.internal."]
+    },
+    {
+      name    = "" # Apex record (prod.internal.)
+      type    = "TXT"
+      ttl     = 300
+      rrdatas = ["\"v=spf1 -all\""]
+    }
+  ]
+}
+
