@@ -121,18 +121,14 @@ module "cloud_dns" {
   dns_name   = "prod.internal."
   visibility = "private"
 
-  # Reference the network output from your VPC module
-  vpc_self_links = [
-    module.vpc.network_self_link
-  ]
+  vpc_self_links = module.vpc.vpc_self_links
 
-  # Example records pointing to your VM internal IP and a CNAME
   records = [
     {
       name    = "app"
       type    = "A"
       ttl     = 300
-      rrdatas = [module.vm.internal_ip]
+      rrdatas = [module.virtual_machines.internal_ip]
     },
     {
       name    = "api"
@@ -148,4 +144,6 @@ module "cloud_dns" {
     }
   ]
 }
+
+
 
