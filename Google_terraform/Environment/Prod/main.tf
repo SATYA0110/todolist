@@ -96,13 +96,7 @@ module "gke" {
       labels = {
         workload = "stateless"
       }
-      taints = [
-        {
-          key    = "://google.com"
-          value  = "true"
-          effect = "NO_SCHEDULE"
-        }
-      ]
+      
     }
   }
 
