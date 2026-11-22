@@ -6,3 +6,9 @@ output "vpc_name" {
     value = google_compute_network.vpc.name
 }
 
+
+  vpc_self_links = [
+    module.vpc.vpc_id
+  ]
+
+
