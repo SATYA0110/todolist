@@ -126,10 +126,6 @@ resource "google_container_node_pool" "pools" {
       enable_integrity_monitoring = true
     }
 
-    oauth_scopes = [
-      "https://googleapis.com"
-    ]
-
     metadata = {
       disable-legacy-endpoints = "true"
     }
