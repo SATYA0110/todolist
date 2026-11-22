@@ -114,7 +114,7 @@ module "gke" {
 
 
 module "cloud_dns" {
-  source = "./modules/cloud-dns"
+  source = "../../module/cloud-dns"
 
   project_id = var.project_id
   zone_name  = "prod-private-zone"
