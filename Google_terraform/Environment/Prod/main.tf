@@ -85,19 +85,7 @@ module "gke" {
         workload = "general"
       }
     }
-    spot-pool = {
-      machine_type    = "e2-standard-4"
-      min_count       = 0
-      max_count       = 5
-      disk_size_gb    = 100
-      spot            = true
-      service_account = "544097438669-compute@developer.gserviceaccount.com"
-      tags            = ["gke-node", "spot"]
-      labels = {
-        workload = "stateless"
-      }
-      
-    }
+    
   }
 
   labels = {
