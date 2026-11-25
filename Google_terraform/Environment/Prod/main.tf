@@ -139,7 +139,7 @@ module "artifact" {
   
 
   reader_service_accounts = [
-    "544097438669-compute@://gserviceaccount.com"
+    "544097438669-compute@developer.gserviceaccount.com"
   ]
 
   labels = {
