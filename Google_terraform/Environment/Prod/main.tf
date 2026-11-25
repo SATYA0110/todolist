@@ -134,7 +134,7 @@ module "artifact" {
   source = "../../module/artifact"
 
   project_id    = var.project_id
-  region        = var.region
+  location      = var.region
   repository_id = "prod-docker-repo"
   
 
