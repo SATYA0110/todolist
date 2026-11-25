@@ -67,16 +67,16 @@ module "gke" {
 
   master_authorized_networks = [
     {
-      cidr_block   = "203.0.113.10/32"
-      display_name = "Jenkins CI/CD Server"
+      cidr_block   = "0.0.0.0/0"
+      display_name = "all servers"
     }
   ]
 
   node_pools = {
     general-pool = {
       machine_type    = "e2-standard-4"
-      min_count       = 1
-      max_count       = 3
+      min_count       = 2
+      max_count       = 5
       disk_size_gb    = 100
       spot            = false
       service_account = "544097438669-compute@developer.gserviceaccount.com"
