@@ -3,7 +3,7 @@ variable "project_id" {
   type        = string
 }
 
-variable "region" {
+variable "location" {
   description = "GCP region for Artifact Registry (e.g., us-central1)"
   type        = string
 }

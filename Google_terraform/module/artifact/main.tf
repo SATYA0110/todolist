@@ -7,7 +7,7 @@ resource "google_project_service" "artifact_registry" {
 
 resource "google_artifact_registry_repository" "repo" {
     project               = var.project_id
-    location              = var.region
+    location              = var.location
     repository_id         = var.repository_id
     description           = "docker image repo"
     format                = var.format
