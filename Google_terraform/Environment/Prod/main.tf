@@ -129,3 +129,21 @@ module "cloud_dns" {
 
 
 
+
+module "artifact" {
+  source = "../../module/artifact_registry"
+
+  project_id    = var.project_id
+  region        = var.region
+  repository_id = "prod-docker-repo"
+  description   = "Production Docker images for GKE"
+
+  reader_service_accounts = [
+    "544097438669-compute@://gserviceaccount.com"
+  ]
+
+  labels = {
+    environment = "prod"
+    managed_by  = "terraform"
+  }
+}
