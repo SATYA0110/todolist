@@ -5,7 +5,7 @@ resource "google_project_service" "artifact_registry" {
 
 }
 
-resource "google_artifact_registory_repo" "repo" {
+resource "google_artifact_registry_repository" "repo" {
     project               = var.project_id
     location              = var.location
     repository_id         = var.repository_id

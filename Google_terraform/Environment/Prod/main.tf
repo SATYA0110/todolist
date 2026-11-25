@@ -131,7 +131,7 @@ module "cloud_dns" {
 
 
 module "artifact" {
-  source = "../../module/artifact_registry"
+  source = "../../module/artifact"
 
   project_id    = var.project_id
   region        = var.region
